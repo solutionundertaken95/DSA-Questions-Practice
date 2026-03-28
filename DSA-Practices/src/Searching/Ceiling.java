@@ -2,6 +2,13 @@ package Searching;
 
 public class Ceiling {
 
+    //Ceiling is the smallest number that is greater than or equal to the target
+    // think of it like this  start   target   end
+    //if target is not found, at that time while loop breaks(start > end)
+    //start = end + 1
+    //since it is a sorted array, the start will now point to the next greatest value to the target right
+    //print the value of start index
+
     private static int binarySearch(int[] arr, int target) {
 
         int start = 0;
