@@ -15,6 +15,11 @@ public class Ceiling {
 
         int end = arr.length - 1;
 
+        if(target > arr[end]){
+            return -1;
+        }
+
+
         boolean isAsc = arr[start] < arr[end];
 
         while (start <= end) {
@@ -46,13 +51,18 @@ public class Ceiling {
     public static void main(String[] args) {
 
         int[] num = {2,3,5,9,14,16,18};
-        int target = 15;
+        int target = 20;
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
         System.out.println("Ceiling of NUmber in Array\n");
 
         int index = binarySearch(num,target);
-        System.out.println("Ceiling of " +target+ " is " +num[index]);
+        if(index == -1){
+            System.out.println("There is no ceiling since the target is the biggest number in the array");
+        }
+        else
+            System.out.println("Ceiling of " +target+ " is " +num[index]);
+
 
     }
 }

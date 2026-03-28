@@ -16,6 +16,10 @@ public class FloorOfValue {
 
         boolean isAsc = arr[start] < arr[end];
 
+        if(target < arr[start]){
+            return -1;
+        }
+
         while (start <= end) {
 
             int mid = start + (end - start) / 2;
@@ -45,13 +49,18 @@ public class FloorOfValue {
     public static void main(String[] args) {
 
         int[] num = {2,3,5,9,14,16,18};
-        int target = 15;
+        int target = 6;
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
         System.out.println("Floor of NUmber in Array\n");
 
         int index = binarySearch(num,target);
-        System.out.println("Floor of " +target+ " is " +num[index]);
+        if(index == -1){
+            System.out.println("There is no floor since the target is the smallest number in the array");
+        }
+        else
+            System.out.println("Ceiling of " +target+ " is " +num[index]);
+
 
     }
 }
