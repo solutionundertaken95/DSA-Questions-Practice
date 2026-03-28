@@ -40,8 +40,9 @@ public class BinarySearch {
 
         while(start<=end){
 
-            int mid = (start + end)/2;
-
+//            int mid = (start + end)/2;
+//(might be possible that (start + end) can exceed the value of int if values of start and end are big)
+            int mid = start + (end-start) / 2;
             if(arr[mid] == target){
                 return mid;
             } else if (arr[mid]> target) {
