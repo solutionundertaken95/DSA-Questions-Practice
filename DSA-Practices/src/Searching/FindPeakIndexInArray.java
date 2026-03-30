@@ -27,6 +27,8 @@ public class FindPeakIndexInArray {
             else {
                 end = mid;
             }
+
+            //At every point , the start and end will have the best possible value
         }
 
         return start;
