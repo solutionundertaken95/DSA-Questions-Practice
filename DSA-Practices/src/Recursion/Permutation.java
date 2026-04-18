@@ -7,7 +7,7 @@ public class Permutation {
         String unprocessed = "abc";
 //        permutations("",unprocessed);
         ArrayList<String> arrayList = permutations2("",unprocessed);
-        System.out.println(arrayList);
+        System.out.println(arrayList.size());
     }
 
     private static void permutations(String processed, String unprocessed) {
