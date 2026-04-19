@@ -10,6 +10,7 @@ public class Maze {
         mazeprint("",3,3);
 
         System.out.println(mazeprintRet("",3,3));
+        System.out.println(mazeprintRetwithDiagonal("",3,3));
     }
 
     private static int maze(int r, int c) {
@@ -61,6 +62,34 @@ public class Maze {
 
         if(c > 1){
             list.addAll(mazeprintRet(p + 'R',r,c-1));
+        }
+
+        return list;
+
+    }
+
+
+    private static ArrayList<String> mazeprintRetwithDiagonal(String p, int r, int c) {
+
+        if(r == 1 && c == 1){
+            ArrayList<String> arrayList = new ArrayList<>();
+            arrayList.add(p);
+            return arrayList;
+        }
+
+
+        ArrayList<String> list = new ArrayList<>();
+
+        if (r>1 && c>1){
+            list.addAll(mazeprintRetwithDiagonal(p + 'd',r-1,c-1));
+        }
+
+        if(r > 1){
+            list.addAll(mazeprintRetwithDiagonal(p + 'V',r-1,c));
+        }
+
+        if(c > 1){
+            list.addAll(mazeprintRetwithDiagonal(p + 'H',r,c-1));
         }
 
         return list;
